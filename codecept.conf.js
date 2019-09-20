@@ -1,5 +1,5 @@
 exports.config = {
-  tests: './*_test.js',
+  tests: './tests/*_test.js',
   output: './output',
   plugins: {
 	  wdio: {
@@ -10,15 +10,13 @@ exports.config = {
   helpers: {
     WebDriver: {
       desiredCapabilities: {
-		  browserName: 'chrome',
-		  chromeOptions: {
-			  args: [ /*"--headless", "--disable-gpu", "--window-size=1200,1000",*/ "--no-sandbox"]
-		  }
+		  "acceptInsecureCerts": true,
+		  // chromeOptions: { args: [  "--headless", "--disable-gpu", "--window-size=1024,768", "--no-sandbox"]}
 	  }, 
 	  url: 'https://juegos-staging.personal.com.ar',
       waitForTimeout: 3000,
-	  browser: 'chrome',
-      windowSize: '1440x900',
+	  browser: 'firefox',
+      windowSize: '1024,768',
 	  restart: false
       
     },
